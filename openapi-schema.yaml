@@ -5,8 +5,7 @@ info:
   description: Yawa REST API
 servers:
   - url: /api
-security:
-  - BasicAuth: []
+
 paths:
   /auth/login:
       post:
@@ -36,6 +35,9 @@ paths:
       delete:
           summary: Terminate user authentication
           operationId: logout
+          security:
+            - BasicAuth: []
+              BearerAuth: []
           tags:
               - authentication
           responses:
@@ -80,6 +82,9 @@ paths:
       get:
           summary: Get authenticated user record
           operationId: getAuthenticatedUser
+          security:
+            - BasicAuth: [ ]
+              BearerAuth: [ ]
           tags:
               - user
           responses:
@@ -96,6 +101,9 @@ paths:
       delete:
         summary: Delete user account
         operationId: deleteUser
+        security:
+          - BasicAuth: []
+            BearerAuth: [ ]
         tags:
           - user
         responses:
@@ -109,6 +117,9 @@ paths:
       get:
         summary: Get authenticated user preferences
         operationId: getAuthenticatedUserPreferences
+        security:
+          - BasicAuth: []
+            BearerAuth: [ ]
         tags:
           - user
         responses:
@@ -125,6 +136,9 @@ paths:
       put:
         summary: Update authenticated user preferences
         operationId: updateAuthenticatedUserPreferences
+        security:
+          - BasicAuth: [ ]
+            BearerAuth: [ ]
         tags:
           - user
         requestBody:
@@ -147,6 +161,9 @@ paths:
     put:
       summary: Update authenticated user basic preferences
       operationId: updateAuthenticatedUserBasicPreferences
+      security:
+        - BasicAuth: [ ]
+          BearerAuth: [ ]
       tags:
         - user
       requestBody:
@@ -169,6 +186,9 @@ paths:
     put:
       summary: Update authenticated user favorite wallet
       operationId: updateAuthenticatedUserFavoriteWallet
+      security:
+        - BasicAuth: [ ]
+          BearerAuth: [ ]
       tags:
         - user
       parameters:
@@ -188,6 +208,9 @@ paths:
     delete:
       summary: Reset authenticated user favorite wallet
       operationId: resetAuthenticatedUserFavoriteWallet
+      security:
+        - BasicAuth: [ ]
+          BearerAuth: [ ]
       tags:
         - user
       responses:
@@ -201,6 +224,9 @@ paths:
       post:
           summary: Create category
           operationId: createCategory
+          security:
+            - BasicAuth: [ ]
+              BearerAuth: [ ]
           tags:
               - category
           requestBody:
@@ -231,6 +257,9 @@ paths:
       get:
         summary: Search category records
         operationId: getCategories
+        security:
+          - BasicAuth: [ ]
+            BearerAuth: [ ]
         tags:
             - category
         responses:
@@ -250,6 +279,9 @@ paths:
       get:
           summary: Get category record by ID
           operationId: getCategory
+          security:
+            - BasicAuth: [ ]
+              BearerAuth: [ ]
           tags:
               - category
           parameters:
@@ -270,6 +302,9 @@ paths:
       put:
           summary: Update category record by ID
           operationId: updateCategory
+          security:
+            - BasicAuth: [ ]
+              BearerAuth: [ ]
           tags:
               - category
           parameters:
@@ -295,6 +330,9 @@ paths:
       delete:
           summary: Delete category record by ID
           operationId: deleteCategory
+          security:
+            - BasicAuth: [ ]
+              BearerAuth: [ ]
           tags:
               - category
           parameters:
@@ -312,6 +350,9 @@ paths:
       post:
           summary: Create transaction record
           operationId: createTransaction
+          security:
+            - BasicAuth: [ ]
+              BearerAuth: [ ]
           tags:
               - transaction
           requestBody:
@@ -342,6 +383,9 @@ paths:
       get:
         summary: Search transaction records sorting by date descending
         operationId: getTransactions
+        security:
+          - BasicAuth: [ ]
+            BearerAuth: [ ]
         tags:
             - transaction
         parameters:
@@ -406,6 +450,9 @@ paths:
       get:
           summary: Get transaction record by ID
           operationId: getTransaction
+          security:
+            - BasicAuth: [ ]
+              BearerAuth: [ ]
           tags:
               - transaction
           parameters:
@@ -426,6 +473,9 @@ paths:
       put:
           summary: Update transaction record by ID
           operationId: updateTransaction
+          security:
+            - BasicAuth: [ ]
+              BearerAuth: [ ]
           tags:
               - transaction
           parameters:
@@ -451,6 +501,9 @@ paths:
       delete:
           summary: Delete transaction record by ID
           operationId: deleteTransaction
+          security:
+            - BasicAuth: [ ]
+              BearerAuth: [ ]
           tags:
               - transaction
           parameters:
@@ -468,6 +521,9 @@ paths:
       post:
           summary: Create wallet record
           operationId: createWallet
+          security:
+            - BasicAuth: [ ]
+              BearerAuth: [ ]
           tags:
               - wallet
           requestBody:
@@ -498,6 +554,9 @@ paths:
       get:
         summary: Search wallet records
         operationId: getWallets
+        security:
+          - BasicAuth: [ ]
+            BearerAuth: [ ]
         tags:
             - wallet
         responses:
@@ -517,6 +576,9 @@ paths:
       get:
           summary: Get wallet record by ID
           operationId: getWallet
+          security:
+            - BasicAuth: [ ]
+              BearerAuth: [ ]
           tags:
               - wallet
           parameters:
@@ -537,6 +599,9 @@ paths:
       put:
           summary: Update wallet record by ID
           operationId: updateWallet
+          security:
+            - BasicAuth: [ ]
+              BearerAuth: [ ]
           tags:
               - wallet
           parameters:
@@ -562,6 +627,9 @@ paths:
       delete:
           summary: Delete wallet record by ID
           operationId: deleteWallet
+          security:
+            - BasicAuth: [ ]
+              BearerAuth: [ ]
           tags:
               - wallet
           parameters:
@@ -579,6 +647,9 @@ paths:
       get:
           summary: Get supported currencies
           operationId: getCurrencies
+          security:
+            - BasicAuth: [ ]
+              BearerAuth: [ ]
           tags:
             - wallet
           responses:
@@ -598,6 +669,9 @@ paths:
       post:
           summary: Create event record
           operationId: createEvent
+          security:
+            - BasicAuth: [ ]
+              BearerAuth: [ ]
           tags:
               - event
           requestBody:
@@ -628,6 +702,9 @@ paths:
       get:
         summary: Search event records
         operationId: getEvents
+        security:
+          - BasicAuth: [ ]
+            BearerAuth: [ ]
         tags:
             - event
         responses:
@@ -647,6 +724,9 @@ paths:
       get:
           summary: Get event record by ID
           operationId: getEvent
+          security:
+            - BasicAuth: [ ]
+              BearerAuth: [ ]
           tags:
               - event
           parameters:
@@ -667,6 +747,9 @@ paths:
       put:
           summary: Update event record by ID
           operationId: updateEvent
+          security:
+            - BasicAuth: [ ]
+              BearerAuth: [ ]
           tags:
               - event
           parameters:
@@ -692,6 +775,9 @@ paths:
       delete:
           summary: Delete event record by ID
           operationId: deleteEvent
+          security:
+            - BasicAuth: [ ]
+              BearerAuth: [ ]
           tags:
               - event
           parameters:
@@ -709,6 +795,9 @@ paths:
     get:
       summary: Get event transaction records sorting by date descending
       operationId: getEventTransactions
+      security:
+        - BasicAuth: [ ]
+          BearerAuth: [ ]
       tags:
         - event
       parameters:
@@ -752,6 +841,9 @@ paths:
     post:
       summary: Request data export
       operationId: requestDataExport
+      security:
+        - BasicAuth: [ ]
+          BearerAuth: [ ]
       tags:
         - data-export
       responses:
@@ -775,6 +867,9 @@ paths:
     get:
       summary: Search data exports
       operationId: getDataExports
+      security:
+        - BasicAuth: [ ]
+          BearerAuth: [ ]
       tags:
         - data-export
       responses:
@@ -794,6 +889,9 @@ paths:
     delete:
       summary: Delete data export by ID
       operationId: deleteDataExport
+      security:
+        - BasicAuth: [ ]
+          BearerAuth: [ ]
       tags:
         - data-export
       parameters:
@@ -811,6 +909,9 @@ paths:
     post:
       summary: Create automatic rule
       operationId: createAutomaticRule
+      security:
+        - BasicAuth: [ ]
+          BearerAuth: [ ]
       tags:
         - automatic-rule
       requestBody:
@@ -841,6 +942,9 @@ paths:
     get:
       summary: Search automatic rules
       operationId: getAutomaticRules
+      security:
+        - BasicAuth: [ ]
+          BearerAuth: [ ]
       tags:
         - automatic-rule
       responses:
@@ -860,6 +964,9 @@ paths:
     put:
       summary: Update automatic rule record by ID
       operationId: updateAutomaticRule
+      security:
+        - BasicAuth: [ ]
+          BearerAuth: [ ]
       tags:
         - automatic-rule
       parameters:
@@ -885,6 +992,9 @@ paths:
     delete:
       summary: Delete automatic rule by ID
       operationId: deleteAutomaticRule
+      security:
+        - BasicAuth: [ ]
+          BearerAuth: [ ]
       tags:
         - automatic-rule
       parameters:
@@ -902,6 +1012,9 @@ paths:
     post:
       summary: Create budget
       operationId: createBudget
+      security:
+        - BasicAuth: [ ]
+          BearerAuth: [ ]
       tags:
         - budget
       requestBody:
@@ -932,6 +1045,9 @@ paths:
     get:
       summary: Search budgets
       operationId: getBudgets
+      security:
+        - BasicAuth: [ ]
+          BearerAuth: [ ]
       tags:
         - budget
       responses:
@@ -951,6 +1067,9 @@ paths:
     put:
       summary: Update budget record by ID
       operationId: updateBudget
+      security:
+        - BasicAuth: [ ]
+          BearerAuth: [ ]
       tags:
         - budget
       parameters:
@@ -976,6 +1095,9 @@ paths:
     delete:
       summary: Delete budget by ID
       operationId: deleteBudget
+      security:
+        - BasicAuth: [ ]
+          BearerAuth: [ ]
       tags:
         - budget
       parameters:
@@ -1891,3 +2013,7 @@ components:
     BasicAuth:
       type: http
       scheme: basic
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

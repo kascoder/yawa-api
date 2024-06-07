@@ -4,7 +4,7 @@ plugins {
     id("org.openapi.generator") version "6.6.0"
 }
 
-version = "0.16.1"
+version = "0.17-SNAPSHOT"
 
 repositories {
     mavenCentral()
